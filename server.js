@@ -3,8 +3,10 @@ const animals = require("./data/animals");
 
 const app = express();
 
-app.listen(3001, () => {
-  console.log("Server Listening port 3001");
+const PORT = process.env.PORT || 3001;
+
+app.listen(PORT, () => {
+  console.log(`Server Listening port ${PORT}`);
 });
 
 app.get("/api/animals", (req, res) => {
